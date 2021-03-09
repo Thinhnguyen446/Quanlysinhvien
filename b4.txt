@@ -1,0 +1,50 @@
+let element = [3, 5, 2, 19, 7, 10, 11, 23];
+for(let m = 0; m < element.length; m++)
+{
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z <= element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + 1;  
+      }
+    }
+    if(d == 2)
+    {
+      var u = element[i];
+      break;
+    }
+  }
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z <= element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + 1;  
+      }
+    }
+    if(d == 2)
+    {
+      if(u > element[i])
+      {
+        for(let v = 0; v < element.length; v++)
+        {
+          if(element[v] == u)
+          {
+            element[v] = element[i];
+            element[i] = u;
+          }
+        }
+      }
+      else if(u < element[i])
+      {
+        u = element[i];
+      }
+    }
+  }
+}
+console.log(element);

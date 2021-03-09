@@ -1,0 +1,99 @@
+let u;
+let element = [1, 2, 3, 4, 7, 5, 28, 9, 6];
+for(let m = 0; m < element.length; m++)
+{
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z < element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + z;
+      }
+    }
+    if(d == element [i])
+    {
+      u = element[i];
+      break;
+    }
+  }
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z < element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + z;
+      }
+    }
+    if(d == element [i])
+    {
+      if(u > element[i])
+      {
+        for(let v = 0; v < element.length; v++)
+        {
+          if(element[v] == u)
+          {
+            element[v] = element[i];
+            element[i] = u;
+          }
+        }
+      }
+      else if(u < element[i])
+      {
+      	u = element[i];
+      }
+    }
+  }
+}
+for(let m = 0; m < element.length; m++)
+{
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z <= element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + 1;
+      }
+    }
+    if(d == 2)
+    {
+      u = element[i];
+      break;
+    }
+  }
+  for(let i = 0; i < element.length; i++)
+  {
+    let d = 0;
+    for(let z = 1; z <= element[i]; z++)
+    {
+      if(element[i] % z == 0)
+      {
+        d = d + 1;
+      }
+    }
+    if(d == 2)
+    {
+      if(u < element[i])
+      {
+        for(let v = 0; v < element.length; v++)
+        {
+          if(element[v] == u)
+          {
+            element[v] = element[i];
+            element[i] = u;
+          }
+        }
+      }
+      else if(u >= element[i])
+      {
+        u = element[i];
+      }
+    }
+  }
+}
+console.log(element);

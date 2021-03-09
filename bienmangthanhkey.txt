@@ -1,0 +1,10 @@
+let element = [1, 2, 4, 6, 10, 20, 10, 2];
+let obj = {};
+for(let i = 0; i < element.length; i++)
+{
+	obj[element[i]] = 0;
+}
+for(let key in obj)
+{
+	console.log(key);
+}

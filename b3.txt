@@ -1,0 +1,40 @@
+let element = [1, 4, 2, 6, 0, 8, 9, 7];
+let u;
+for(let i = 0; i < element.length; i++)
+{
+	if(element[i] % 2 == 0)
+  {
+  	u = element[i];
+    break;
+  }
+}
+for(let m = 0; m < element.length; m++)
+{
+  for(let z = 0; z < element.length; z++)
+  {
+    if(element[z] % 2 == 0 && u > element[z])
+    {
+      for(let i = 0; i < element.length; i++)
+      {
+        if(element[i] == u)
+        {
+          element[i] = element[z];
+          element[z] = u;
+        }
+      }
+    }
+    else if(element[z] % 2 == 0 && u <= element[z])
+    {
+      u = element[z];
+    }
+  }
+  for(let v = 0; v < element.length; v++)
+  {
+    if(element[v] % 2 == 0)
+    {
+      u = element[v];
+      break;
+    }
+  }
+}
+console.log(element)

@@ -1,0 +1,143 @@
+let math, literature, address, average, ans;
+
+student= 
+{
+	Name: "Nguyen Huu Thinh",
+  MSSV: 2051120184,
+}
+
+  function nhapDiem(toan, van, diaChi)
+  {
+     math = toan;
+     literature = van; 
+     address = diaChi;
+  }
+  
+  nhapDiem(Number(prompt("please enter math")), Number(prompt("please enter literature")), prompt("please enter address"));
+  student.math = math;
+  student.literature = literature;
+  student.address = address
+  
+/*   console.log("student.math: " + student.math);
+  console.log("student.literature: " + student.literature);
+  console.log("student.address: " + student.address); */
+  
+   function ave(toan, van)
+   {
+     average = (toan + van) / 2;
+   }
+   
+ ave(student.math, student.literature);
+ student.average = average;
+ /* console.log("diem tb: " + average); */  
+     
+     var arr = [];
+     arr.push(student);
+     
+/*      for (let i = 0; i < arr.length; i++) {
+       console.log("math: " + arr[i].math);
+       console.log("literature: " + arr[i].literature);
+       console.log("address: " + arr[i].address);
+       console.log("diem tb: " + arr[i].average);
+     } */
+     
+    function answer()
+     {
+       for(let i = 0; i < arr.length; i++)
+         {
+      ans = prompt("Do you want to add student? (Y/N)")
+      if(ans == "Y"|| ans == "y")
+      {
+      	let newStudent = {};
+        
+        let name = prompt("Nhap ten");
+        newStudent.Name = name; 
+        let MSSV = Number(prompt("Nhap MSSV"));
+        newStudent.MSSV = MSSV;
+        let address = prompt("Nhap dia chi");
+        newStudent.address = address;
+        math = Number(prompt("please enter math"))
+        newStudent.math = math;
+        literature = Number(prompt("please enter literature"))
+        newStudent.literature = literature;
+        average = (math + literature) / 2;
+        newStudent.average = average;
+        arr.push(newStudent);
+        
+      }
+      else if(ans == "N", ans == "n")
+        break;
+         }
+     }
+     answer();
+     
+     console.log(arr.length);
+     
+       for (let i = 0; i < arr.length; i++) {
+       console.log("math: " + arr[i].math);
+       console.log("literature: " + arr[i].literature);
+       console.log("address: " + arr[i].address);
+       console.log("diem tb: " + arr[i].average);
+       console.log("-------");
+           }
+     
+     function soSanh()
+       {
+           let maxName = arr[0].Name;
+           var maxMath = arr[0].math;
+      
+      for (let i = 0; i < arr.length; i++) {
+        if (maxMath < arr[i].math) {
+          maxName = arr[i].Name;
+          maxMath = arr[i].math;
+        }
+      }
+      console.log("Student have max math is: ");
+      console.log("Name: " + maxName);
+      console.log("Math: " + maxMath);
+      console.log("----------------------------");
+      
+     
+    let minName = arr[0].Name;
+    let minAverage = arr[0].average;
+    
+     for (let i = 0; i < arr.length; i++) {
+         if (minAverage > arr[i].average) {
+          minName = arr[i].Name;
+          minAverage = arr[i].average;
+        }
+     }
+     console.log("Student have min average is: ");
+     console.log("Name: " + minName); 
+     console.log("Average: " + minAverage);
+       }
+       
+       soSanh();
+       console.log("----------------------------");
+       
+   /*  function sapXep()
+    {
+      let v = arr[0].literature;
+      for(let i = 0; i < arr.length; i++)
+      {
+    for(let z = 0; z < arr.length; z++)
+    {
+      if(arr[z+1].literature < v)
+      {
+        arr[z+1].literature = arr[z].literature;
+        arr[z].literature = v;
+        v = arr[z+1].literature;
+      }
+    }
+      } 
+      
+    } 
+    sapXep();
+    
+    for (let i = 0; i < arr.length; i++) {
+       console.log("math: " + arr[i].math);
+       console.log("literature: " + arr[i].literature);
+       console.log("address: " + arr[i].address);
+       console.log("diem tb: " + arr[i].average);
+       console.log("-------");
+     } */

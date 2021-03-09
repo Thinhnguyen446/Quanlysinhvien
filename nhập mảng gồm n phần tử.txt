@@ -1,0 +1,14 @@
+let input = Number(prompt("please enter the first element"))
+let element = [input]
+do
+{
+	let dodai = element.length;
+	var comment = prompt("Do you want to add element? (Y or N)");
+  if(comment == "Y"|| comment == "y")
+  {
+  	element[dodai] = Number(prompt("please enter number"));
+  }
+  else if(comment == "N"|| comment == "n")
+  	break;
+}while(comment == "Y"|| comment == "y");
+console.log(element);

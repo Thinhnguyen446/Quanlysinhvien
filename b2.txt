@@ -1,0 +1,18 @@
+let element = [6 ,9 , 1, 7, 0];
+let u;
+let length = element.length;
+console.log("thu tu tang dan cac phan tu la")
+for(let i = 0; i <length; i++)
+{
+	u = element[i];
+	for(let z = i + 1; z < element.length; z++)
+  {
+  	if(element[i] > element[z])
+    {
+    	element[i] = element[z];
+      element[z] = u;
+      u = element[i];
+    }
+  }
+}
+console.log(element)

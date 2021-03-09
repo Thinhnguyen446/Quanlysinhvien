@@ -1,0 +1,16 @@
+let element = [111, 2, 4, 29, 8, 12, 13, 15, 200, 300];
+if(element[0] > element[1])
+{
+  	console.log(element[0]);
+}
+if(element[element.length - 1] > element[element.length - 2])
+{
+  	console.log(element[element.length - 1]);
+} 
+for(let i = 0; i < element.length ; i++)
+{
+	if(element[i] > element[i - 1]&& element[i] > element[i + 1] )
+  {
+  	console.log(element[i]);
+  }
+}

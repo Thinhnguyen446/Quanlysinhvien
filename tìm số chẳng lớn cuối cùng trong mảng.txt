@@ -1,0 +1,10 @@
+let element = [1, 2, 4, 8, 12, 13, 15, 200, 111];
+let u;
+for(let i = 0; i < element.length; i++)
+{
+	if(element[i] % 2 == 0)
+  {
+  	u = element[i];
+  }
+}
+console.log(u)

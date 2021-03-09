@@ -1,0 +1,14 @@
+var student = {
+name : "thinh",
+age: 18,
+yearofBirth: 2002,
+sclass: "FullStack",
+rollno: 12
+};
+delete student.sclass;
+delete student.rollno;
+for(let key in student)
+{
+	console.log(key);
+  //console.log(student[key]);
+}

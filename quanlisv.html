@@ -1,0 +1,174 @@
+let id, name, address, math, literature, average, answer;
+let student = {};
+
+/* ------------------------------- Input First Student Info ------------------------------------ */
+function inputStudentInfo(id, name, address, math, literature) {
+    student.id = id;
+    student.name = name;
+    student.address = address;
+    student.math = math;
+    student.literature = literature;
+}
+
+id = Number(prompt("Please enter student's id: "));
+name = prompt("Please enter student's name: ");
+address = prompt("Please enter student's address: ");
+math = Number(prompt("Please enter math score: "));
+literature = Number(prompt("Please enter literature score: "));
+
+inputStudentInfo(id, name, address, math, literature);
+console.log("-----------------------------------------------------------------------------");
+console.log("Student info entered are: ");
+console.log("-----------------------------------------------------------------------------");
+console.log("Id: " + student.id + " - Name: " + student.name  + " - Address: " + student.address 
+            + " - Math: " + student.math + " - Literature: " + student.literature);
+console.log("-----------------------------------------------------------------------------\n\n\n");
+/* -------------------------------- Input First Student Info ----------------------------------- */
+
+
+
+/* ----------------------------- Calcualte First Student Average Score ----------------------------------- */
+function calculateAverage(math, literature) {
+    student.average = (math + literature) / 2;
+}
+   
+console.log("-----------------------------------------------------------------------------");
+calculateAverage(student.math, student.literature);
+console.log("Average score is: ");
+console.log("-----------------------------------------------------------------------------");
+console.log("Average: " + student.average);
+console.log("-----------------------------------------------------------------------------\n\n\n");
+     
+var studentsArray = [];
+studentsArray.push(student);
+   
+console.log("-----------------------------------------------------------------------------");
+console.log("Student info entered with average are: ");
+console.log("-----------------------------------------------------------------------------");
+for (let i = 0; i < studentsArray.length; i++) {
+    console.log("Id: " + studentsArray[i].id + " - Name: " + studentsArray[i].name 
+                + " - Address: " + studentsArray[i].address + " - Math: " + studentsArray[i].math 
+                + " - Literature: " + studentsArray[i].literature + " - Average: "  +studentsArray[i].average);
+}
+console.log("-----------------------------------------------------------------------------\n\n\n");
+/* ------------------------------ Calcualte First Student Average Score ------------------------------------ */
+
+
+/* --------------------------------------- Ask User Add More Student --------------------------------------- */   
+function askInputMoreStudent() {
+
+    for(let i = 0; i < studentsArray.length; i++) {
+        answer = prompt("Do you want to add student? (Y/N)");
+
+        if(answer == "Y"|| answer == "y"){
+            let newStudent = {};
+    
+            newStudent.id = Number(prompt("Please enter student's id: "));
+            newStudent.name = prompt("Please enter student's name: ");
+            newStudent.address = prompt("Please enter student's address: ");
+            newStudent.math = Number(prompt("Please enter math score: "));
+            newStudent.literature = Number(prompt("Please enter literature score: "));
+            newStudent.average = (newStudent.math + newStudent.literature) / 2;
+
+            studentsArray.push(newStudent);
+        } else if(answer == "N", answer == "n") break;
+    }
+}
+askInputMoreStudent();
+     
+console.log("-----------------------------------------------------------------------------");
+console.log("There are " + studentsArray.length + " students in our list: ");
+console.log("-----------------------------------------------------------------------------");
+for (let i = 0; i < studentsArray.length; i++) {
+    console.log("Id: " + studentsArray[i].id + " - Name: " + studentsArray[i].name 
+                + " - Address: " + studentsArray[i].address + " - Math: " + studentsArray[i].math 
+                + " - Literature: " + studentsArray[i].literature + " - Average: "  +studentsArray[i].average);
+}
+console.log("-----------------------------------------------------------------------------\n\n\n");
+/* --------------------------------------- Ask User Add More Student --------------------------------------- */
+
+
+
+/* ------------------------------ Sort Student List By Liteture Score Ascending ------------------------------- */
+function compareByLiteratureScore(firstStudent, secondStudent) {
+    if (firstStudent.literature < secondStudent.literature){
+        return -1;
+    }
+    if (firstStudent.literature > secondStudent.literature){
+        return 1;
+    }
+    return 0;
+}
+
+function sortByLiteratureScore() {
+    studentsArray.sort(compareByLiteratureScore);
+
+    console.log("-----------------------------------------------------------------------------");
+    console.log("Our student list after sorting by literature score is: ");
+    console.log("-----------------------------------------------------------------------------");
+    for (let i = 0; i < studentsArray.length; i++) {
+        console.log("Id: " + studentsArray[i].id + " - Name: " + studentsArray[i].name 
+                    + " - Address: " + studentsArray[i].address + " - Math: " + studentsArray[i].math 
+                    + " - Literature: " + studentsArray[i].literature + " - Average: "  +studentsArray[i].average);
+    }
+    console.log("-----------------------------------------------------------------------------\n\n\n");
+}
+
+sortByLiteratureScore();
+/* ------------------------------ Sort Student List By Liteture Score Ascending ------------------------------- */
+
+
+
+/* ---------------------------------- Find Max Math Score In Student List ------------------------------------- */
+function compareByMathScore(firstStudent, secondStudent) {
+    if (firstStudent.math < secondStudent.math){
+        return -1;
+    }
+    if (firstStudent.math > secondStudent.math){
+        return 1;
+    }
+    return 0;
+}
+
+function findMaxMathScore() {
+    studentsArray.sort(compareByMathScore);
+
+    let maxMathStudentPosition = studentsArray.length - 1;
+    let maxMathStudent = studentsArray[maxMathStudentPosition];
+
+    console.log("-----------------------------------------------------------------------------");
+    console.log("Student have max math score is: ");
+    console.log("-----------------------------------------------------------------------------");
+    console.log("Id: " + maxMathStudent.id + " - Name: " + maxMathStudent.name  + " - Address: " + maxMathStudent.address 
+            + " - Math: " + maxMathStudent.math + " - Literature: " + maxMathStudent.literature + " - Average: " + maxMathStudent.average);
+    console.log("-----------------------------------------------------------------------------\n\n\n");
+}
+
+findMaxMathScore();
+/* ---------------------------------- Find Max Math Score In Student List ------------------------------------- */
+
+
+
+/* --------------------------------- Find Min Avverage Score In Student List ----------------------------------- */
+function compareByAverageScore(firstStudent, secondStudent) {
+    if (firstStudent.average > secondStudent.average){
+        return -1;
+    }
+    if (firstStudent.average < secondStudent.average){
+        return 1;
+    }
+    return 0;
+}
+
+function findMinAverageScore() {
+    studentsArray.sort(compareByAverageScore);
+
+    let minAverageStudentPosition = studentsArray.length - 1;
+    let minAverageStudent = studentsArray[minAverageStudentPosition];
+
+    console.log("-----------------------------------------------------------------------------");
+    console.log("Student have min average score is: ");
+    console.log("-----------------------------------------------------------------------------");
+    console.log("Id: " + minAverageStudent.id + " - Name: " + minAverageStudent.name  + " - Address: " + minAverageStudent.address 
+            + " - Math: " + minAverageStudent.math + " - Literature: " + minAverageStudent.literature + " - Average: " + minAverageStudent.average);
+    console.log("-----------------------------------------------------------------------------\n\n\n");

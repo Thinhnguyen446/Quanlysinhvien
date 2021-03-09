@@ -1,0 +1,8 @@
+let element = [1, 2, 4, 29, 8, 12, 13, 15, 200, 111];
+for(let i = 0; i < element.length - 1; i++)
+{
+	if(element[i] > element[i + 1])
+  {
+  	console.log(element[i]);
+  }
+}

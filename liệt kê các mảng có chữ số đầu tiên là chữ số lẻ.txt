@@ -1,0 +1,14 @@
+let element = [1, 10, 13, 28, 104];
+let n;
+for(let i = 0; i < element.length; i++)
+{
+	do
+  {
+  	n = Math.floor(element[i] / 10);
+  }while(n > 10);
+	if(n % 2 == 0)
+  {
+  	element.splice(i,1);
+  }
+}
+console.log(element)

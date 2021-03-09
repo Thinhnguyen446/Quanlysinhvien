@@ -1,0 +1,24 @@
+let input = Number(prompt("please enter number"));
+let element = [input];
+do{
+var answer = prompt("do you want to enter number")
+if(answer == "y"||answer == "Y" )
+{
+	var u = Number(prompt("please enter Number"));
+  element.push(u);
+}
+else if(answer == "N"||answer == "n")
+	break;
+}while(answer == "Y"||answer == "y")
+console.log(element);
+for(i = 0; i < element.length; i++)
+{
+	for(z = i + 1; z < element.length; z++)
+  {
+   if(element[z] == element[i])
+   {
+   	element.splice(z,1);
+   }
+  }
+}
+console.log(element);
